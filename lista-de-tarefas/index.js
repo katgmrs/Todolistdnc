@@ -1,4 +1,4 @@
-// Seleciona elementos do DOM
+
 const addButton = document.querySelector('.add-button');
 const tasksContainer = document.querySelector('.tasks');
 const taskNameInput = document.querySelector('input[placeholder="Nome da tarefa"]');
@@ -7,37 +7,36 @@ const footer = document.querySelector('.footer');
 
 let completedTasks = 0;
 
-// Função para atualizar o contador de tarefas concluídas
+
 function updateCompletedCounter() {
     footer.textContent = `${completedTasks} tarefa${completedTasks !== 1 ? 's' : ''} concluída${completedTasks !== 1 ? 's' : ''}`;
 }
 
-// Função para marcar uma tarefa como concluída
+
 function concludeTask(taskElement, taskSpan) {
     if (!taskSpan.classList.contains('completed')) {
         taskSpan.classList.add('completed');
 
-        // Remove o botão "Concluir"
+      
         const button = taskElement.querySelector('.conclude-button');
         if (button) {
             button.remove();
         }
 
-        // Criar o ícone de check verde
+       
         const checkCircle = document.createElement('div');
         checkCircle.classList.add('check-circle');
 
-        // Adicionar o ícone à tarefa
+
         taskElement.appendChild(checkCircle);
 
-        // Atualizar o contador de tarefas concluídas
+     
         completedTasks++;
         updateCompletedCounter();
     }
 }
 
 
-// Adicionar nova tarefa
 addButton.addEventListener('click', () => {
     const taskName = taskNameInput.value.trim();
     const tag = tagInput.value.trim();
@@ -61,7 +60,6 @@ addButton.addEventListener('click', () => {
         <button class="conclude-button">Concluir</button>
     `;
 
-    // Adicionar evento ao botão concluir
     const concludeButton = taskElement.querySelector('.conclude-button');
     const taskSpan = taskElement.querySelector('span');
     
@@ -71,12 +69,11 @@ addButton.addEventListener('click', () => {
 
     tasksContainer.appendChild(taskElement);
 
-    // Limpar campos
     taskNameInput.value = '';
     tagInput.value = '';
 });
 
-// Inicializar contador de tarefas concluídas
+
 document.addEventListener('DOMContentLoaded', () => {
     const completedElements = document.querySelectorAll('.completed');
     completedTasks = completedElements.length;

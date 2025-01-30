@@ -1,4 +1,4 @@
-/* Estilos gerais */
+
 body {
     font-family: "Rubik", serif;
     margin: 0;
@@ -29,7 +29,7 @@ h1 {
     text-align: left;
 }
 
-/* Área de input */
+
 .header {
     display: flex;
     gap: 12px;
@@ -55,7 +55,7 @@ input {
     font-size: 16px;
 }
 
-/* Tarefas */
+
 .task {
     padding: 20px 0;
     border-bottom: 1px solid #e0e0e0;
@@ -125,7 +125,7 @@ small {
     font-size: 14px;
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
     .board {
         width: 100%;
